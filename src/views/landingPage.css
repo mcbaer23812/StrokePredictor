@@ -1,0 +1,64 @@
+#landingPagePane {
+    -fx-background-color: linear-gradient(to bottom, #CAF0F8, #00b4d8);
+    -fx-padding: 20px;
+    -fx-alignment: center;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 10, 10);
+}
+
+#logoLabel {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 48px;
+    -fx-text-fill: #03045E;
+    -fx-text-align: center;
+    -fx-letter-spacing: 1px;
+    -fx-padding: 0px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
+
+}
+
+#taglineLabel {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-weight: regular;
+    -fx-font-size: 24px;
+    -fx-text-fill: #03045E;
+    -fx-text-align: center;
+    -fx-letter-spacing: 0.5px;
+    -fx-padding: 10px;
+    /* -fx-background-color: rgba(0, 0, 0, 0.1); */
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
+}
+
+/* all @media sections are for device adaptability */
+
+@media screen and (max-width: 1024px) {
+    #logoLabel {
+        -fx-font-size: 40px;
+    }
+
+    #landingPagePane {
+        -fx-padding: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #logoLabel {
+        -fx-font-size: 32px;
+    }
+
+    #landingPagePane {
+        -fx-padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #logoLabel {
+        -fx-font-size: 24px;
+    }
+
+    #landingPagePane {
+        -fx-padding: 5px;
+    }
+}

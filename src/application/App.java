@@ -14,9 +14,12 @@ public class App extends Application {
 
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("/views/MainScene.fxml"));
-            Scene scene = new Scene(root);
-            primaryStage.setTitle("Hello World!");
+            primaryStage.setResizable(true);
+            primaryStage.setTitle("Stroke Risk Predictor");
+            root = FXMLLoader.load(getClass().getResource("/views/LandingPage.fxml"));
+            Scene scene = new Scene(root,1024,768);
+            String landingPageCSS = this.getClass().getResource("/views/landingPage.css").toExternalForm();
+            scene.getStylesheets().add(landingPageCSS);
             primaryStage.setScene(scene);
             primaryStage.show();
         } catch (IOException e) {
