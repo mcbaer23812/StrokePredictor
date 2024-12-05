@@ -24,6 +24,31 @@
     -fx-translate-y: 2px;
 }
 
+.label {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #03045E;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0.5, 0, 1);
+}
+
+.combo-box {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #03045E;
+    -fx-background-color: linear-gradient(to bottom, #FFFFFF, #CAF0F8);
+    -fx-border-color: #00B4D8;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.5, 0, 1);
+}
+
+.combo-box:focused {
+    -fx-border-color: #0077B6;
+    -fx-background-color: linear-gradient(to bottom, #E0F7FA, #CAF0F8);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
+}
+
 .context-menu {
     -fx-background-color: #0077B6;
     -fx-background-radius: 5px;
@@ -31,28 +56,29 @@
     -fx-effect: none;
 }
 
-.tooltip {
-    -fx-background-color: #0077B6;
-    -fx-text-fill: #FFFFFF;
+.text-field {
     -fx-font-family: 'Roboto', sans-serif;
     -fx-font-size: 14px;
-    -fx-padding: 5px;
-    -fx-border-color: #CAF0F8;
-    -fx-border-width: 1px;
+    -fx-text-fill: #03045E;
+    -fx-background-color: linear-gradient(to bottom, #FFFFFF, #CAF0F8);
+    -fx-border-color: #00B4D8;
     -fx-border-radius: 5px;
     -fx-background-radius: 5px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 2, 0.5, 0, 1);
 }
 
-#callToActionLabel {
-    -fx-font-family: 'Roboto', sans-serif;
-    -fx-font-weight: normal;
-    -fx-font-size: 18px;
-    -fx-text-fill: #03045E;
-    -fx-text-align: center;
-    -fx-letter-spacing: 0.5px;
-    -fx-padding: 10px;
-    -fx-border-radius: 10px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
+.text-field:focused {
+    -fx-border-color: #0077B6;
+    -fx-background-color: linear-gradient(to bottom, #E0F7FA, #CAF0F8);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
+}
+
+#assessmentPagePane {
+    -fx-background-color: linear-gradient(to bottom, #CAF0F8, #00b4d8);
+    -fx-alignment: center;
+    -fx-border-radius: 15px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 10, 10);
+    -fx-padding: 5px;
 }
 
 #footerHBox {
@@ -64,6 +90,12 @@
     -fx-alignment: center;
 }
 
+#githubLabel:hover {
+    -fx-text-fill: #CAF0F8;
+    -fx-cursor: hand;
+    -fx-underline: true;
+}
+
 #githubLabel,
 #createdByLabel,
 #versionLabel {
@@ -72,12 +104,6 @@
     -fx-font-weight: bold;
     -fx-text-fill: #FFFFFF;
     -fx-opacity: 0.9;
-}
-
-#githubLabel:hover {
-    -fx-text-fill: #CAF0F8;
-    -fx-cursor: hand;
-    -fx-underline: true;
 }
 
 #homeButton,
@@ -96,31 +122,6 @@
     -fx-text-fill: #CAF0F8;
 }
 
-#landingPagePane {
-    -fx-background-color: linear-gradient(to bottom, #CAF0F8, #00b4d8);
-    -fx-padding: 5px;
-    -fx-alignment: center;
-    -fx-border-radius: 15px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 10, 10);
-}
-
-#logoImage {
-    -fx-effect: dropshadow(gaussian, #00b4d865, 30, 0.7, 0, 0);
-}
-
-#logoLabel {
-    -fx-font-family: 'Roboto', sans-serif;
-    -fx-font-weight: bold;
-    -fx-font-size: 48px;
-    -fx-text-fill: #03045E;
-    -fx-text-align: center;
-    -fx-letter-spacing: 1px;
-    -fx-padding: 0px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
-
-}
-
-
 #menuBar {
     -fx-background-color: linear-gradient(to bottom, #00B4D8, #0077B6);
     -fx-padding: 5px;
@@ -130,24 +131,13 @@
     -fx-border-color: transparent;
 }
 
-#taglineLabel {
-    -fx-font-family: 'Roboto', sans-serif;
-    -fx-font-weight: normal;
-    -fx-font-size: 24px;
-    -fx-text-fill: #03045E;
-    -fx-text-align: center;
-    -fx-letter-spacing: 0.5px;
-    -fx-padding: 10px;
-    -fx-border-radius: 10px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
-}
 
 @media screen and (max-width: 1024px) {
     #logoLabel {
         -fx-font-size: 40px;
     }
 
-    #landingPagePane {
+    #assessmentPagePane {
         -fx-padding: 15px;
     }
 }
@@ -157,7 +147,7 @@
         -fx-font-size: 32px;
     }
 
-    #landingPagePane {
+    #assessmentPagePane {
         -fx-padding: 10px;
     }
 }
@@ -167,7 +157,7 @@
         -fx-font-size: 24px;
     }
 
-    #landingPagePane {
+    #assessmentPagePane {
         -fx-padding: 5px;
     }
 }

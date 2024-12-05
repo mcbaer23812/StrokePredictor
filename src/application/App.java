@@ -14,7 +14,10 @@ public class App extends Application {
 
         Parent root;
         try {
+            //resizable, but forced to be 1024x768 min
             primaryStage.setResizable(true);
+            primaryStage.setMinWidth(1024);
+            primaryStage.setMinHeight(768);
             primaryStage.setTitle("Stroke Risk Predictor");
             root = FXMLLoader.load(getClass().getResource("/views/LandingPage.fxml"));
             Scene scene = new Scene(root,1024,768);

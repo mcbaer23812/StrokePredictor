@@ -3,36 +3,25 @@
     -fx-font-size: 16px;
     -fx-font-weight: bold;
     -fx-text-fill: #FFFFFF;
-    /* White text */
     -fx-background-color: linear-gradient(to bottom, #00B4D8, #0077B6);
-    /* Gradient effect */
     -fx-border-radius: 10px;
-    /* Rounded corners */
     -fx-background-radius: 10px;
     -fx-padding: 10 20;
-    /* Adds spacing inside the button */
     -fx-cursor: hand;
-    /* Pointer cursor on hover */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
-    /* Soft shadow */
 }
 
 .button:hover {
     -fx-background-color: linear-gradient(to bottom, #0077B6, #03045E);
-    /* Darker gradient on hover */
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0, 3);
-    /* Stronger shadow */
     -fx-scale-x: 1.05;
     -fx-scale-y: 1.05;
 }
 
 .button:pressed {
     -fx-background-color: #0077B6;
-    /* Flat darker blue */
     -fx-effect: none;
-    /* Removes shadow on press */
     -fx-translate-y: 2px;
-    /* Simulates "pressing" */
 }
 
 .context-menu {
@@ -42,43 +31,21 @@
     -fx-effect: none;
 }
 
-.menu-bar {
-    -fx-background-color: linear-gradient(to bottom, #00B4D8, #0077B6);
-    -fx-padding: 5px;
-    -fx-font-family: 'Roboto', sans-serif;
-    -fx-font-size: 16px;
-    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
-}
-
-.menu {
-    -fx-font-weight: bold;
-    -fx-label-padding: 0 10px 0 10px;
-}
-
-.menu .label {
-    -fx-text-fill: #FFFFFF;
-}
-
-.menu:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.1);
-}
-
-.menu-item {
-    -fx-font-family: 'Roboto', sans-serif;
-    -fx-text-fill: #FFFFFF;
+.tooltip {
     -fx-background-color: #0077B6;
-    -fx-background-radius: 5px;
-    -fx-padding: 5px;
-}
-
-.menu-item:hover {
-    -fx-background-color: #005F99;
     -fx-text-fill: #FFFFFF;
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 14px;
+    -fx-padding: 5px;
+    -fx-border-color: #CAF0F8;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
 }
 
 #callToActionLabel {
     -fx-font-family: 'Roboto', sans-serif;
-    -fx-font-weight: regular;
+    -fx-font-weight: normal;
     -fx-font-size: 18px;
     -fx-text-fill: #03045E;
     -fx-text-align: center;
@@ -88,7 +55,18 @@
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
 }
 
-#githubLabel, #createdByLabel, #versionLabel {
+#footerHBox {
+    -fx-border-color: #0077B6;
+    -fx-border-width: 2px 0 0 0;
+    -fx-border-style: solid;
+    -fx-padding: 10px;
+    -fx-spacing: 20px;
+    -fx-alignment: center;
+}
+
+#githubLabel,
+#createdByLabel,
+#versionLabel {
     -fx-font-family: 'Roboto', sans-serif;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
@@ -97,20 +75,30 @@
 }
 
 #githubLabel:hover {
-    -fx-text-fill: #CAF0F8; 
+    -fx-text-fill: #CAF0F8;
     -fx-cursor: hand;
+    -fx-underline: true;
 }
 
-.footer {
-    -fx-background-color: #0077B6;
-    -fx-padding: 10px;
-    -fx-spacing: 20px;
-    -fx-alignment: center-left;
+#homeButton,
+#helpButton,
+#settingsButton {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 16px;
+    -fx-padding: 5px 15px;
+    -fx-cursor: hand;
+    -fx-border-color: transparent;
+}
+
+#homeButton:hover {
+    -fx-text-fill: #CAF0F8;
 }
 
 #landingPagePane {
     -fx-background-color: linear-gradient(to bottom, #CAF0F8, #00b4d8);
-    -fx-padding: 20px;
+    -fx-padding: 5px;
     -fx-alignment: center;
     -fx-border-radius: 15px;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 10, 10);
@@ -132,9 +120,19 @@
 
 }
 
+
+#menuBar {
+    -fx-background-color: linear-gradient(to bottom, #00B4D8, #0077B6);
+    -fx-padding: 5px;
+    -fx-spacing: 10px;
+    -fx-alignment: center-left;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
+    -fx-border-color: transparent;
+}
+
 #taglineLabel {
     -fx-font-family: 'Roboto', sans-serif;
-    -fx-font-weight: regular;
+    -fx-font-weight: normal;
     -fx-font-size: 24px;
     -fx-text-fill: #03045E;
     -fx-text-align: center;
