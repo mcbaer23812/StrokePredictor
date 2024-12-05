@@ -1,9 +1,123 @@
+.button {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    /* White text */
+    -fx-background-color: linear-gradient(to bottom, #00B4D8, #0077B6);
+    /* Gradient effect */
+    -fx-border-radius: 10px;
+    /* Rounded corners */
+    -fx-background-radius: 10px;
+    -fx-padding: 10 20;
+    /* Adds spacing inside the button */
+    -fx-cursor: hand;
+    /* Pointer cursor on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
+    /* Soft shadow */
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(to bottom, #0077B6, #03045E);
+    /* Darker gradient on hover */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.5, 0, 3);
+    /* Stronger shadow */
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.button:pressed {
+    -fx-background-color: #0077B6;
+    /* Flat darker blue */
+    -fx-effect: none;
+    /* Removes shadow on press */
+    -fx-translate-y: 2px;
+    /* Simulates "pressing" */
+}
+
+.context-menu {
+    -fx-background-color: #0077B6;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-effect: none;
+}
+
+.menu-bar {
+    -fx-background-color: linear-gradient(to bottom, #00B4D8, #0077B6);
+    -fx-padding: 5px;
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
+}
+
+.menu {
+    -fx-font-weight: bold;
+    -fx-label-padding: 0 10px 0 10px;
+}
+
+.menu .label {
+    -fx-text-fill: #FFFFFF;
+}
+
+.menu:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menu-item {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-text-fill: #FFFFFF;
+    -fx-background-color: #0077B6;
+    -fx-background-radius: 5px;
+    -fx-padding: 5px;
+}
+
+.menu-item:hover {
+    -fx-background-color: #005F99;
+    -fx-text-fill: #FFFFFF;
+}
+
+#callToActionLabel {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-weight: regular;
+    -fx-font-size: 18px;
+    -fx-text-fill: #03045E;
+    -fx-text-align: center;
+    -fx-letter-spacing: 0.5px;
+    -fx-padding: 10px;
+    -fx-border-radius: 10px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
+}
+
+#githubLabel, #createdByLabel, #versionLabel {
+    -fx-font-family: 'Roboto', sans-serif;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-opacity: 0.9;
+}
+
+#githubLabel:hover {
+    -fx-text-fill: #CAF0F8; 
+    -fx-cursor: hand;
+}
+
+.footer {
+    -fx-background-color: #0077B6;
+    -fx-padding: 10px;
+    -fx-spacing: 20px;
+    -fx-alignment: center-left;
+}
+
 #landingPagePane {
     -fx-background-color: linear-gradient(to bottom, #CAF0F8, #00b4d8);
     -fx-padding: 20px;
     -fx-alignment: center;
     -fx-border-radius: 15px;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0.0, 10, 10);
+}
+
+#logoImage {
+    -fx-effect: dropshadow(gaussian, #00b4d865, 30, 0.7, 0, 0);
 }
 
 #logoLabel {
@@ -26,12 +140,9 @@
     -fx-text-align: center;
     -fx-letter-spacing: 0.5px;
     -fx-padding: 10px;
-    /* -fx-background-color: rgba(0, 0, 0, 0.1); */
     -fx-border-radius: 10px;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
 }
-
-/* all @media sections are for device adaptability */
 
 @media screen and (max-width: 1024px) {
     #logoLabel {
