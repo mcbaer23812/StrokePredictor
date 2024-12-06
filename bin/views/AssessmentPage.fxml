@@ -15,13 +15,13 @@
 <GridPane fx:id="assessmentPagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@assessmentPage.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AssessmentPageController">
    <columnConstraints>
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="640.0" minWidth="10.0" percentWidth="33.0" prefWidth="341.0" />
-      <ColumnConstraints hgrow="SOMETIMES" maxWidth="640.0" minWidth="10.0" percentWidth="90.0" prefWidth="341.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="640.0" minWidth="10.0" percentWidth="34.0" prefWidth="341.0" />
       <ColumnConstraints hgrow="SOMETIMES" maxWidth="640.0" minWidth="10.0" percentWidth="33.0" prefWidth="340.0" />
    </columnConstraints>
    <rowConstraints>
       <RowConstraints fillHeight="false" maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
       <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="300.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="325.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="1.7976931348623157E308" minHeight="10.0" prefHeight="345.0" vgrow="SOMETIMES" />
       <RowConstraints fillHeight="false" maxHeight="40.0" minHeight="10.0" prefHeight="40.0" vgrow="SOMETIMES" />
    </rowConstraints>
    <children>
@@ -45,46 +45,78 @@
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </padding>
       </HBox>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" GridPane.rowSpan="2">
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
          <children>
-            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="35.0" HBox.hgrow="ALWAYS">
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Age" />
-                  <Label text="Biological Sex" />
-                  <Label text="BMI (Number)" />
-                  <Label text="Average Glucose Level" />
-                  <Label text="Smoking Status" />
-                  <Label text="Hypertension" />
-                  <Label text="Heart Disease" />
-                  <Label text="Marital Status" />
-                  <Label text="Work Type" />
-                  <Label text="Residence Type" />
+                  <TextField fx:id="ageTextField" prefWidth="150.0" promptText="0-120" />
                </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </VBox>
-            <VBox alignment="CENTER" fillWidth="false" prefHeight="200.0" prefWidth="100.0" spacing="30.0" HBox.hgrow="ALWAYS">
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
-                  <TextField />
-                  <ComboBox prefWidth="150.0" />
-                  <TextField />
-                  <TextField />
-                  <ComboBox prefWidth="150.0" />
-                  <CheckBox mnemonicParsing="false" text="CheckBox" />
-                  <CheckBox mnemonicParsing="false" text="CheckBox" />
-                  <ComboBox prefWidth="150.0" />
-                  <ComboBox prefWidth="150.0" />
-                  <ComboBox prefWidth="150.0" />
+                  <Label text="Gender" />
+                  <ComboBox fx:id="genderComboBox" prefWidth="150.0" />
                </children>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </VBox>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="BMI (Number)" />
+                  <TextField fx:id="bmiTextField" prefWidth="150.0" promptText="0-60.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Average Glucose Level" />
+                  <TextField fx:id="glucoseTextField" prefWidth="150.0" promptText="0-999.99" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Smoking Status" />
+                  <ComboBox fx:id="smokingStatusComboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Hypertension" />
+                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Heart Disease" />
+                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Ever Married" />
+                  <ComboBox fx:id="maritalStatusComboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Work Type" />
+                  <ComboBox fx:id="workTypeComboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Residence Type" />
+                  <ComboBox fx:id="residenceTypeComboBox" prefWidth="150.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="42.0">
+               <children>
+                  <Button mnemonicParsing="false" text="Reset" />
+                  <Button mnemonicParsing="false" text="Submit" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </HBox>
          </children>
-         <GridPane.margin>
-            <Insets />
-         </GridPane.margin>
-      </HBox>
+      </VBox>
    </children>
 </GridPane>
