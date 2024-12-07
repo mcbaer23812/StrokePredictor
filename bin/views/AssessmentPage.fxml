@@ -5,6 +5,8 @@
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -28,7 +30,13 @@
       <HBox fx:id="menuBar" prefHeight="100.0" prefWidth="200.0" GridPane.columnSpan="3">
          <children>
             <Button fx:id="homeButton" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home" />
-            <Button fx:id="helpButton" mnemonicParsing="false" text="Help" />
+            <MenuButton fx:id="helpButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="112.0" text="Help" textFill="WHITE">
+              <items>
+                <MenuItem fx:id="aboutStrokeAware" mnemonicParsing="false" onAction="#onAboutStrokeAwareClick" text="About StrokeAware" />
+                <MenuItem fx:id="howToUse" mnemonicParsing="false" onAction="#onHowToUseClick" text="How to Use StrokeAware" />
+                  <MenuItem fx:id="FAQ" mnemonicParsing="false" onAction="#onFaqClick" text="FAQ" />
+              </items>
+            </MenuButton>
             <Button fx:id="settingsButton" mnemonicParsing="false" text="Settings" />
          </children>
          <GridPane.margin>
@@ -68,7 +76,7 @@
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Average Glucose Level" />
-                  <TextField fx:id="glucoseTextField" prefWidth="150.0" promptText="0-999.99" />
+                  <TextField fx:id="glucoseTextField" prefWidth="150.0" promptText="0-300.00" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -80,13 +88,13 @@
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Hypertension" />
-                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="hypertensionCheckBox" mnemonicParsing="false" text="CheckBox" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Heart Disease" />
-                  <CheckBox mnemonicParsing="false" text="CheckBox" />
+                  <CheckBox fx:id="heartDiseaseCheckBox" mnemonicParsing="false" text="CheckBox" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
@@ -109,8 +117,8 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="42.0">
                <children>
-                  <Button mnemonicParsing="false" text="Reset" />
-                  <Button mnemonicParsing="false" text="Submit" />
+                  <Button fx:id="resetButton" mnemonicParsing="false" onAction="#onResetButtonClick" text="Reset" />
+                  <Button fx:id="submitButton" mnemonicParsing="false" onAction="#onSubmitButtonClick" text="Submit" />
                </children>
                <padding>
                   <Insets bottom="10.0" />

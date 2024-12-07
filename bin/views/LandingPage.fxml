@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -30,7 +32,13 @@
          </GridPane.margin>
          <children>
             <Button fx:id="homeButton" mnemonicParsing="false" onAction="#onHomeButtonClick" text="Home" />
-            <Button fx:id="helpButton" mnemonicParsing="false" text="Help" />
+            <MenuButton fx:id="helpButton" mnemonicParsing="false" text="Help">
+              <items>
+                <MenuItem fx:id="aboutStrokeAware" mnemonicParsing="false" onAction="#onAboutStrokeAwareClick" text="About StrokeAware" />
+                <MenuItem fx:id="howToUse" mnemonicParsing="false" onAction="#onHowToUseClick" text="How to Use StrokeAware" />
+                  <MenuItem fx:id="FAQ" mnemonicParsing="false" onAction="#onFaqClick" text="FAQ" />
+              </items>
+            </MenuButton>
             <Button fx:id="settingsButton" mnemonicParsing="false" text="Settings" />
          </children>
       </HBox>

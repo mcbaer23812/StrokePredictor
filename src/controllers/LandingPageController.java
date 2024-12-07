@@ -9,8 +9,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.MenuButton;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.Tooltip;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -21,6 +24,11 @@ import javafx.util.Duration;
 
 public class LandingPageController {
 
+    @FXML
+    private MenuItem FAQ;
+
+    @FXML
+    private MenuItem aboutStrokeAware;
 
     @FXML
     private Button btnAssessment;
@@ -41,10 +49,13 @@ public class LandingPageController {
     private Label githubLabel;
 
     @FXML
-    private Button helpButton;
+    private MenuButton helpButton;
 
     @FXML
     private Button homeButton;
+
+    @FXML
+    private MenuItem howToUse;
 
     @FXML
     private GridPane landingPagePane;
@@ -88,6 +99,16 @@ public class LandingPageController {
     }
 
     @FXML
+    void onAboutStrokeAwareClick(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("About StrokeAware");
+        alert.setHeaderText("About StrokeAware");
+        alert.setContentText(
+                "StrokeAware helps assess your stroke risk using a machine learning model based on your input data.");
+        alert.showAndWait();
+    }
+
+    @FXML
     void onBeginAssessmentButtonClick(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AssessmentPage.fxml"));
@@ -101,12 +122,21 @@ public class LandingPageController {
             currentStage.setX(currentX);
             currentStage.setY(currentY);
             currentStage.setWidth(currentWidth);
-            currentStage.setHeight(currentHeight); 
+            currentStage.setHeight(currentHeight);
             String assessmentPageCSS = getClass().getResource("/views/assessmentPage.css").toExternalForm();
             newScene.getStylesheets().add((assessmentPageCSS));
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void onFaqClick(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("FAQs");
+        alert.setHeaderText("Frequently Asked Questions");
+        alert.setContentText("Q: What is BMI?\nA: BMI stands for Body Mass Index. It is used to calculate obesity.\n\nQ: What does Average Glucose Level mean?\nA: It refers to your average blood sugar level.");
+        alert.showAndWait();
     }
 
     @FXML
@@ -123,7 +153,7 @@ public class LandingPageController {
             currentStage.setX(currentX);
             currentStage.setY(currentY);
             currentStage.setWidth(currentWidth);
-            currentStage.setHeight(currentHeight); 
+            currentStage.setHeight(currentHeight);
             currentStage.setScene(newScene);
             String landingPageCSS = getClass().getResource("/views/landingPage.css").toExternalForm();
             newScene.getStylesheets().add((landingPageCSS));
@@ -131,6 +161,15 @@ public class LandingPageController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    @FXML
+    void onHowToUseClick(ActionEvent event) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("How to Use StrokeAware");
+        alert.setHeaderText("How to Use StrokeAware");
+        alert.setContentText("1. Fill out the required fields.\n2. Click Submit to calculate your risk.\n3. Review the results.\n");
+        alert.showAndWait();
     }
 
     @FXML
