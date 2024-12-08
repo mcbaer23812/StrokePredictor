@@ -291,27 +291,14 @@ public class AssessmentPageController {
                     hasHeartDisease,
                     maritalStatus, workType, residenceType);
 
-            //PROCESS DATA HERE *******************************************************************************************************
-            boolean isAtElevatedRisk = true; // PUT METHOD TO ASSESS ELEVATED RISK HERE
+            // PROCESS DATA HERE
+            // *******************************************************************************************************
+            boolean isAtElevatedRisk = false; // PUT METHOD TO ASSESS ELEVATED RISK HERE
 
-
-
-
-            
-            Stage currentStage = (Stage) submitButton.getScene().getWindow();
             if (isAtElevatedRisk) {
-                try {
-                    swapScene(currentStage, "/views/elevatedRisk.css", "/views/ElevatedRisk.fxml");
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ElevatedRisk.fxml"));
-                    Scene newScene = new Scene(loader.load());
-                    ElevatedRiskController controller = loader.getController();
-                    controller.setUserData(userData);
-                    currentStage.setScene(newScene);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                swapScene((Stage) submitButton.getScene().getWindow(), "/views/elevatedRisk.css", "/views/ElevatedRisk.fxml", userData);
             } else {
-                swapScene(currentStage, "/views/normalRisk.css", "/views/NormalRisk.fxml");
+                swapScene((Stage) submitButton.getScene().getWindow(), "/views/normalRisk.css", "/views/NormalRisk.fxml");
             }
 
         } catch (NumberFormatException e) {
@@ -346,6 +333,33 @@ public class AssessmentPageController {
             String css = getClass().getResource(cssPage).toExternalForm();
             newScene.getStylesheets().add((css));
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    void swapScene(Stage currentStage, String cssPage, String fxmlPage, UserData userData) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPage));
+            Scene newScene = new Scene(loader.load());
+
+            // pass user data
+            Object controller = loader.getController();
+            if (controller instanceof ElevatedRiskController) {
+                ((ElevatedRiskController) controller).setUserData(userData);
+            }
+
+            double currentX = currentStage.getX();
+            double currentY = currentStage.getY();
+            double currentWidth = currentStage.getWidth();
+            double currentHeight = currentStage.getHeight();
+            currentStage.setScene(newScene);
+            currentStage.setX(currentX);
+            currentStage.setY(currentY);
+            currentStage.setWidth(currentWidth);
+            currentStage.setHeight(currentHeight);
+            String css = getClass().getResource(cssPage).toExternalForm();
+            newScene.getStylesheets().add(css);
         } catch (IOException e) {
             e.printStackTrace();
         }
