@@ -22,6 +22,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
+import models.UserData;
 
 public class AssessmentPageController {
 
@@ -222,26 +223,7 @@ public class AssessmentPageController {
 
     @FXML
     void onHomeButtonClick(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/LandingPage.fxml"));
-            Scene newScene = new Scene(loader.load());
-            Stage currentStage = (Stage) homeButton.getScene().getWindow();
-            double currentX = currentStage.getX();
-            double currentY = currentStage.getY();
-            double currentWidth = currentStage.getWidth();
-            double currentHeight = currentStage.getHeight();
-            currentStage.setScene(newScene);
-            currentStage.setX(currentX);
-            currentStage.setY(currentY);
-            currentStage.setWidth(currentWidth);
-            currentStage.setHeight(currentHeight);
-            currentStage.setScene(newScene);
-            String landingPageCSS = getClass().getResource("/views/landingPage.css").toExternalForm();
-            newScene.getStylesheets().add((landingPageCSS));
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        swapScene((Stage) homeButton.getScene().getWindow(), "/views/landingPage.css", "/views/landingPage.fxml");
     }
 
     @FXML
@@ -305,6 +287,33 @@ public class AssessmentPageController {
 
             // BEGIN DATA PROCESSING
 
+            UserData userData = new UserData(ageValue, gender, bmiValue, glucoseValue, smokingStatus, hasHypertension,
+                    hasHeartDisease,
+                    maritalStatus, workType, residenceType);
+
+            //PROCESS DATA HERE *******************************************************************************************************
+            boolean isAtElevatedRisk = true; // PUT METHOD TO ASSESS ELEVATED RISK HERE
+
+
+
+
+            
+            Stage currentStage = (Stage) submitButton.getScene().getWindow();
+            if (isAtElevatedRisk) {
+                try {
+                    swapScene(currentStage, "/views/elevatedRisk.css", "/views/ElevatedRisk.fxml");
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ElevatedRisk.fxml"));
+                    Scene newScene = new Scene(loader.load());
+                    ElevatedRiskController controller = loader.getController();
+                    controller.setUserData(userData);
+                    currentStage.setScene(newScene);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            } else {
+                swapScene(currentStage, "/views/normalRisk.css", "/views/NormalRisk.fxml");
+            }
+
         } catch (NumberFormatException e) {
             System.out.println("Invalid numeric input. Please check your entries.");
         }
@@ -316,6 +325,28 @@ public class AssessmentPageController {
             String url = "https://github.com/mcbaer23812/StrokePredictor";
             Desktop.getDesktop().browse(new URI(url));
         } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    void swapScene(Stage currentStage, String cssPage, String fxmlPage) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlPage));
+            Scene newScene = new Scene(loader.load());
+            double currentX = currentStage.getX();
+            double currentY = currentStage.getY();
+            double currentWidth = currentStage.getWidth();
+            double currentHeight = currentStage.getHeight();
+            currentStage.setScene(newScene);
+            currentStage.setX(currentX);
+            currentStage.setY(currentY);
+            currentStage.setWidth(currentWidth);
+            currentStage.setHeight(currentHeight);
+            currentStage.setScene(newScene);
+            String css = getClass().getResource(cssPage).toExternalForm();
+            newScene.getStylesheets().add((css));
+
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

@@ -4,7 +4,6 @@ import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -14,30 +13,18 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.Tooltip;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
-import javafx.util.Duration;
 
-public class LandingPageController {
+public class NormalRiskController {
 
     @FXML
     private MenuItem FAQ;
 
     @FXML
     private MenuItem aboutStrokeAware;
-
-    @FXML
-    private Button btnAssessment;
-
-    @FXML
-    private Button btnLearnMore;
-
-    @FXML
-    private Label callToActionLabel;
 
     @FXML
     private Label createdByLabel;
@@ -58,42 +45,13 @@ public class LandingPageController {
     private MenuItem howToUse;
 
     @FXML
-    private GridPane landingPagePane;
-
-    @FXML
-    private ImageView logoImage;
-
-    @FXML
-    private Label logoLabel;
-
-    @FXML
     private HBox menuBar;
 
     @FXML
-    private Label taglineLabel;
+    private GridPane normalRiskPagePane;
 
     @FXML
     private Label versionLabel;
-
-    @FXML
-    void initialize() {
-        Platform.runLater(() -> {
-            landingPagePane.requestFocus();
-        });
-        Tooltip btnAssessmentTooltip = new Tooltip("Start your stroke risk assessment");
-        btnAssessment.setTooltip(btnAssessmentTooltip);
-
-        Tooltip btnLearnMoreTooltip = new Tooltip("Learn more about stroke risks and prevention");
-        btnLearnMore.setTooltip(btnLearnMoreTooltip);
-
-        Tooltip githubTooltip = new Tooltip("Visit the GitHub repository");
-        githubLabel.setTooltip(githubTooltip);
-
-        btnAssessmentTooltip.setShowDelay(Duration.millis(500));
-        btnLearnMoreTooltip.setShowDelay(Duration.millis(500));
-        githubTooltip.setShowDelay(Duration.millis(500));
-
-    }
 
     @FXML
     void onAboutStrokeAwareClick(ActionEvent event) {
@@ -103,11 +61,6 @@ public class LandingPageController {
         alert.setContentText(
                 "StrokeAware helps assess your stroke risk using a machine learning model based on your input data.");
         alert.showAndWait();
-    }
-
-    @FXML
-    void onBeginAssessmentButtonClick(ActionEvent event) {
-        swapScene((Stage) btnAssessment.getScene().getWindow(), "/views/assessmentPage.css", "/views/AssessmentPage.fxml");
     }
 
     @FXML
@@ -161,16 +114,6 @@ public class LandingPageController {
         alert.setContentText(
                 "1. Fill out the required fields.\n2. Click Submit to calculate your risk.\n3. Review the results.\n");
         alert.showAndWait();
-    }
-
-    @FXML
-    void onLearnMoreButtonClick(ActionEvent event) {
-        try {
-            String url = "https://www.stroke.org/";
-            Desktop.getDesktop().browse(new URI(url));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 
     @FXML
