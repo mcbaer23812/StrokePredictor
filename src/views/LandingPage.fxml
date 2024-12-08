@@ -39,7 +39,6 @@
                   <MenuItem fx:id="FAQ" mnemonicParsing="false" onAction="#onFaqClick" text="FAQ" />
               </items>
             </MenuButton>
-            <Button fx:id="settingsButton" mnemonicParsing="false" text="Settings" />
          </children>
       </HBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">

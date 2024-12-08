@@ -37,7 +37,6 @@
                   <MenuItem fx:id="FAQ" mnemonicParsing="false" onAction="#onFaqClick" text="FAQ" />
               </items>
             </MenuButton>
-            <Button fx:id="settingsButton" mnemonicParsing="false" text="Settings" />
          </children>
          <GridPane.margin>
             <Insets left="-5.0" right="-5.0" top="-5.0" />

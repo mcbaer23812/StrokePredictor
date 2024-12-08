@@ -63,13 +63,13 @@
     -fx-translate-y: 2px;
 }
 
-.menu-button > .label {
+.menu-button>.label {
     -fx-text-fill: white;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 3, 0.5, 0, 2);
     -fx-cursor: hand;
 }
 
-.menu-button:hover > .label {
+.menu-button:hover>.label {
     -fx-text-fill: #CAF0F8;
     -fx-scale-x: 1.05;
     -fx-scale-y: 1.05;
@@ -125,8 +125,7 @@
 }
 
 #homeButton,
-#helpButton,
-#settingsButton {
+#helpButton {
     -fx-background-color: transparent;
     -fx-text-fill: white;
     -fx-font-family: 'Roboto', sans-serif;
@@ -137,9 +136,9 @@
 }
 
 #homeButton:hover,
-#helpButton:hover,
-#settingsButton:hover {
-    -fx-text-fill: #CAF0F8; /* Blue highlight */
+#helpButton:hover {
+    -fx-text-fill: #CAF0F8;
+    /* Blue highlight */
 }
 
 #landingPagePane {

@@ -70,9 +70,6 @@ public class LandingPageController {
     private HBox menuBar;
 
     @FXML
-    private Button settingsButton;
-
-    @FXML
     private Label taglineLabel;
 
     @FXML
@@ -145,7 +142,7 @@ public class LandingPageController {
                         "A: StrokeAware is designed for anyone who wants to assess their risk of stroke based on personal health and lifestyle data.\n\n"
                         +
                         "Q: How accurate is StrokeAware's prediction?\n" +
-                        "A: StrokeAware provides an estimated risk using predictive models but should not replace professional medical advice or diagnosis.\n\n"
+                        "A: StrokeAware provides an estimated risk using a machine learning model, but should not replace professional medical advice or diagnosis.\n\n"
                         +
                         "Q: Can StrokeAware diagnose a stroke?\n" +
                         "A: No, the app cannot diagnose a stroke. It only offers an assessment based on your provided data.\n\n"
