@@ -55,61 +55,61 @@
       </HBox>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.rowSpan="2">
          <children>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Age" />
                   <TextField fx:id="ageTextField" prefWidth="150.0" promptText="0-120" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Gender" />
                   <ComboBox fx:id="genderComboBox" prefWidth="150.0" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="BMI (Number)" />
                   <TextField fx:id="bmiTextField" prefWidth="150.0" promptText="0-60.0" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Average Glucose Level" />
                   <TextField fx:id="glucoseTextField" prefWidth="150.0" promptText="0-300.00" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Smoking Status" />
                   <ComboBox fx:id="smokingStatusComboBox" prefWidth="150.0" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Hypertension" />
                   <CheckBox fx:id="hypertensionCheckBox" mnemonicParsing="false" text="CheckBox" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Heart Disease" />
                   <CheckBox fx:id="heartDiseaseCheckBox" mnemonicParsing="false" text="CheckBox" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Ever Married" />
                   <ComboBox fx:id="maritalStatusComboBox" prefWidth="150.0" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Work Type" />
                   <ComboBox fx:id="workTypeComboBox" prefWidth="150.0" />
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
                <children>
                   <Label text="Residence Type" />
                   <ComboBox fx:id="residenceTypeComboBox" prefWidth="150.0" />
