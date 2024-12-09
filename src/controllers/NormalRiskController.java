@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 
 public class NormalRiskController {
 
+
     @FXML
     private MenuItem FAQ;
 
@@ -49,6 +50,18 @@ public class NormalRiskController {
 
     @FXML
     private GridPane normalRiskPagePane;
+
+    @FXML
+    private Label textLabel;
+
+    @FXML
+    private Label tipBodyLabel;
+
+    @FXML
+    private Label tipHeaderLabel;
+
+    @FXML
+    private Label titleLabel;
 
     @FXML
     private Label versionLabel;

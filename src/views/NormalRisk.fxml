@@ -9,6 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 
 <GridPane fx:id="normalRiskPagePane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1024.0" stylesheets="@normalRisk.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.NormalRiskController">
    <columnConstraints>
@@ -38,6 +39,37 @@
             <Insets left="-5.0" right="-5.0" top="-5.0" />
          </GridPane.margin>
       </HBox>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" GridPane.columnSpan="3" GridPane.rowIndex="1" GridPane.rowSpan="2">
+         <children>
+            <Label fx:id="titleLabel" alignment="CENTER" prefHeight="82.0" prefWidth="792.0" text="Your Stroke Risk is NOT Elevated!">
+               <padding>
+                  <Insets bottom="25.0" />
+               </padding>
+            </Label>
+            <Label fx:id="textLabel" alignment="CENTER" prefHeight="142.0" prefWidth="905.0" text="Based on the information you provided, you are not at an elevated risk for stroke at this time." wrapText="true">
+               <padding>
+                  <Insets bottom="125.0" />
+               </padding>
+            </Label>
+            <Label fx:id="tipHeaderLabel" alignment="CENTER" prefHeight="52.0" prefWidth="702.0" text="Tips for Maintaining a Healthy Lifestyle" />
+            <VBox fx:id="tipBodyText" maxHeight="345.0" maxWidth="700.0" prefHeight="345.0" prefWidth="400.0" spacing="35.0">
+               <children>
+                  <Label text="- Eat a balanced diet rich in fruits, vegetables, and whole grains." />
+                  <Label text="- Exercise regularly. 150 minutes of moderate intensity or 75 minutes of high intensity exerciseper week as a minimum.&quot;" wrapText="true" />
+                  <Label text="- Stay well hydrated and well rested." />
+                  <Label text="- Avoid smoking and limit alcohol consumption." />
+                  <Label text="- Monitor your blood pressure and cholesterol levels." />
+                  <Label text="- If you have heart disease, get treatment and maintain a well structured treatment plan." />
+               </children>
+            </VBox>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets top="25.0" />
+         </GridPane.margin>
+      </VBox>
       <HBox fx:id="footerHBox" alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="40.0" GridPane.columnSpan="3" GridPane.rowIndex="3">
          <children>
             <Label fx:id="githubLabel" onMouseClicked="#openGitHub" text="GitHub" />
