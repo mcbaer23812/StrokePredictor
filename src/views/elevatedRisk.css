@@ -37,6 +37,7 @@
     -fx-font-weight: bold;
     -fx-text-fill: #03045E;
     -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 2, 0.5, 0, 1);
+    -fx-wrap-text: true;
 }
 
 .menu-button {
@@ -150,6 +151,31 @@
     -fx-border-color: transparent;
 }
 
+#textLabel {
+    -fx-font-size: 22px;
+    -fx-font-weight: normal;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
+}
+
+#tipBodyText{
+    -fx-font-weight: normal;
+    -fx-background: transparent;
+    -fx-background-color: transparent;
+    -fx-control-inner-background: transparent;
+}
+
+#tipHeaderLabel{
+    -fx-font-size: 20px;
+    -fx-font-weight: normal;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 5, 0.0, 2, 2);
+    -fx-underline: true;
+
+}
+
+#titleLabel {
+    -fx-font-size: 50px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 5, 0.0, 2, 2);
+}
 
 @media screen and (max-width: 1024px) {
     #logoLabel {

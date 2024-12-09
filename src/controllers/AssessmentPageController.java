@@ -293,7 +293,7 @@ public class AssessmentPageController {
 
             // PROCESS DATA HERE
             // *******************************************************************************************************
-            boolean isAtElevatedRisk = false; // PUT METHOD TO ASSESS ELEVATED RISK HERE
+            boolean isAtElevatedRisk = true; // PUT METHOD TO ASSESS ELEVATED RISK HERE
 
             if (isAtElevatedRisk) {
                 swapScene((Stage) submitButton.getScene().getWindow(), "/views/elevatedRisk.css", "/views/ElevatedRisk.fxml", userData);

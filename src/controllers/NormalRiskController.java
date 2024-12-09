@@ -16,10 +16,10 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class NormalRiskController {
-
 
     @FXML
     private MenuItem FAQ;
@@ -55,7 +55,7 @@ public class NormalRiskController {
     private Label textLabel;
 
     @FXML
-    private Label tipBodyLabel;
+    private VBox tipBodyText;
 
     @FXML
     private Label tipHeaderLabel;

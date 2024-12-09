@@ -67,7 +67,7 @@ public class UserData {
         this.smokingStatus = smokingStatus;
     }
 
-    public boolean isHasHypertension() {
+    public boolean hasHypertension() {
         return hasHypertension;
     }
 
@@ -75,7 +75,7 @@ public class UserData {
         this.hasHypertension = hasHypertension;
     }
 
-    public boolean isHasHeartDisease() {
+    public boolean hasHeartDisease() {
         return hasHeartDisease;
     }
 

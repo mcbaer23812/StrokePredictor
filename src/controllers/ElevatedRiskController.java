@@ -13,9 +13,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.MenuItem;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import models.UserData;
@@ -31,7 +33,13 @@ public class ElevatedRiskController {
     private MenuItem aboutStrokeAware;
 
     @FXML
+    private VBox contentBox;
+
+    @FXML
     private Label createdByLabel;
+
+    @FXML
+    private GridPane elevatedRiskPagePane;
 
     @FXML
     private HBox footerHBox;
@@ -52,10 +60,24 @@ public class ElevatedRiskController {
     private HBox menuBar;
 
     @FXML
-    private GridPane elevatedRiskPagePane;
+    private Label textLabel;
+
+    @FXML
+    private ScrollPane tipBodyText;
+
+    @FXML
+    private Label tipHeaderLabel;
+
+    @FXML
+    private Label titleLabel;
 
     @FXML
     private Label versionLabel;
+
+    @FXML
+    void initialize() {
+
+    }
 
     @FXML
     void onAboutStrokeAwareClick(ActionEvent event) {
@@ -132,7 +154,51 @@ public class ElevatedRiskController {
 
     public void setUserData(UserData userData) {
         this.userData = userData;
-        // updateUI(); // Update the UI with user-specific data
+
+        if (contentBox != null) {
+            contentBox.getChildren().clear();
+        }
+
+        // Check thresholds and add labels dynamically
+        if (userData.getAge() > 55) {
+            addLabel("Age: Each decade after you turn 55 doubles your stroke risk. Get annual checkups, exercise, and maintain a healthy diet.");
+        }
+
+        if (userData.getBmi() > 25) {
+            addLabel("BMI: A BMI over 25 indicates being overweight, which increases stroke risk. Contact your doctor to get help creating a diet and exercise routine best fit for you.");
+        }
+
+        if (userData.getGlucose() > 140) {
+            addLabel("Glucose Level: Elevated glucose levels increase the risk of stroke. High glucose levels damage blood vessels, making them more susceptible to narrowing, which can lead to stroke.");
+        }
+
+        if (userData.hasHypertension()) {
+            addLabel("Hypertension: High blood pressure is a major stroke risk factor.");
+        }
+
+        if (userData.hasHeartDisease()) {
+            addLabel("Heart Disease: Having heart disease increases your stroke risk.");
+        }
+
+        if ("Smokes".equals(userData.getSmokingStatus())) {
+            addLabel("Smoking: Smoking significantly raises the risk of stroke.");
+        }
+
+        if ("Rural".equals(userData.getResidenceType())) {
+            addLabel("Residence: Living in rural areas might limit access to healthcare, in case of a medical emergency.");
+        }
+
+        // If no specific risks were flagged
+        if (contentBox.getChildren().size() <= 1) {
+            addLabel("No specific elevated risk factors were flagged in your data.");
+        }
+    }
+
+    private void addLabel(String text) {
+        Label label = new Label(text);
+        label.setWrapText(true);
+        label.setStyle("-fx-font-size: 16px; -fx-text-fill: #03045E;");
+        contentBox.getChildren().add(label);
     }
 
     void swapScene(Stage currentStage, String cssPage, String fxmlPage) {
