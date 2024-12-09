@@ -293,12 +293,14 @@ public class AssessmentPageController {
 
             // PROCESS DATA HERE
             // *******************************************************************************************************
-            boolean isAtElevatedRisk = true; // PUT METHOD TO ASSESS ELEVATED RISK HERE
+            boolean isAtElevatedRisk = false; // PUT METHOD TO ASSESS ELEVATED RISK HERE
 
             if (isAtElevatedRisk) {
-                swapScene((Stage) submitButton.getScene().getWindow(), "/views/elevatedRisk.css", "/views/ElevatedRisk.fxml", userData);
+                swapScene((Stage) submitButton.getScene().getWindow(), "/views/elevatedRisk.css",
+                        "/views/ElevatedRisk.fxml", userData);
             } else {
-                swapScene((Stage) submitButton.getScene().getWindow(), "/views/normalRisk.css", "/views/NormalRisk.fxml");
+                swapScene((Stage) submitButton.getScene().getWindow(), "/views/normalRisk.css",
+                        "/views/NormalRisk.fxml");
             }
 
         } catch (NumberFormatException e) {
@@ -332,7 +334,6 @@ public class AssessmentPageController {
             currentStage.setScene(newScene);
             String css = getClass().getResource(cssPage).toExternalForm();
             newScene.getStylesheets().add((css));
-
         } catch (IOException e) {
             e.printStackTrace();
         }

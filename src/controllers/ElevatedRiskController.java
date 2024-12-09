@@ -24,6 +24,7 @@ import models.UserData;
 
 public class ElevatedRiskController {
 
+    @SuppressWarnings("unused")
     private UserData userData; // Field to store user data
 
     @FXML
